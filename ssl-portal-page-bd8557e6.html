@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斗球 · 轻量导航介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background-color: #fafafa;
+      color: #1e1e1e;
+      line-height: 1.7;
+    }
+
+    /* 极窄正文 + 留白 */
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 顶部导航 — 极简文字 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 16px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #2a2a2a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4a4a;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d85a2a;
+    }
+
+    /* hero 区域 — 轻量 */
+    .hero {
+      margin: 80px 0 64px;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: #5a5a5a;
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    .hero .sentence-link {
+      font-size: 1rem;
+      color: #3a3a3a;
+    }
+
+    .hero .sentence-link a {
+      color: #d85a2a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .hero .sentence-link a:hover {
+      color: #b8461a;
+    }
+
+    /* 三个场景卡片模块 */
+    .scenes {
+      margin: 72px 0 64px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 36px;
+      border-left: 4px solid #d85a2a;
+      padding-left: 16px;
+      color: #1e1e1e;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #ececec;
+      border-radius: 14px;
+      padding: 28px 20px 24px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      border-color: #dbdbdb;
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    /* 常见说明 (FAQ 摘要) */
+    .faq-summary {
+      margin: 48px 0 80px;
+    }
+
+    .faq-item {
+      margin-bottom: 28px;
+    }
+
+    .faq-item h4 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #2a2a2a;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #5a5a5a;
+      padding-left: 4px;
+    }
+
+    .faq-item .inline-link {
+      color: #d85a2a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .faq-item .inline-link:hover {
+      color: #b8461a;
+    }
+
+    /* 页脚 */
+    .footer {
+      border-top: 1px solid #eaeaea;
+      padding: 36px 0 44px;
+      font-size: 0.9rem;
+      color: #7a7a7a;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #7a7a7a;
+      text-decoration: none;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    .footer a:hover {
+      color: #d85a2a;
+      border-bottom-color: #d85a2a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 720px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .scene-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+
+      .top-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .hero {
+        margin: 48px 0 40px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+      <span class="nav-logo">斗球·轻导航</span>
+      <ul class="nav-links">
+        <li><a href="#usage">场景</a></li>
+        <li><a href="#faq">说明</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </nav>
+
+    <!-- hero + 自然链接 -->
+    <section class="hero">
+      <h1>快速识别<br>「斗球」的用途</h1>
+      <div class="tagline">
+        如果你刚看到这个网站名，想知道它究竟是做什么的、适合谁用——这里用最直接的方式告诉你。
+      </div>
+      <div class="sentence-link">
+        简单说，<a href="https://ssl-portal-douqiu.com">斗球</a> 是一个轻量化的线上服务入口，聚焦于体育类信息的整合与快捷访问。
+      </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section class="scenes" id="usage">
+      <h2 class="section-title">三个常用场景</h2>
+      <div class="scene-grid">
+        <div class="scene-card">
+          <h3>⚡ 快速查找赛事</h3>
+          <p>想了解近期比赛日程、比分或队伍动态，通过斗球相关的聚合页面能直接定位，省去多平台切换的麻烦。</p>
+        </div>
+        <div class="scene-card">
+          <h3>📋 资料与参考</h3>
+          <p>需要回顾某个联赛的规则、历史数据或球队名单，可以把它当作一个集中式的参考起点，信息结构比较清晰。</p>
+        </div>
+        <div class="scene-card">
+          <h3>🔗 工具链接汇总</h3>
+          <p>如果你经常访问几个固定的体育站点，斗球提供了一组常用入口，让日常浏览更利落，不必反复搜索。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section class="faq-summary" id="faq">
+      <h2 class="section-title">常见说明</h2>
+
+      <div class="faq-item">
+        <h4>这个网站是官方平台吗？</h4>
+        <p>并非任何官方组织或联赛的直属网站。它是一个个人维护的信息导航页，目的是帮助用户更快速地找到与体育相关的公开内容。</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>需要注册或付费吗？</h4>
+        <p>完全不需要。所有展示的链接和信息均基于公开资源，你可以自由浏览。若你发现某些链接指向需要登录的站点，那是目标平台自身的要求。</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>如何开始使用？</h4>
+        <p>直接打开 <a href="https://ssl-portal-douqiu.com" class="inline-link">斗球</a> 首页，你会看到分类清晰的入口。根据你感兴趣的项目点进去即可，没有任何多余步骤。</p>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      斗球 · ssl-portal-douqiu.com &nbsp;·&nbsp; 内容仅供参考，不构成任何引导或承诺。<br>
+      <a href="https://ssl-portal-douqiu.com">斗球</a> — 轻量体育导航
+    </footer>
+  </div>
+</body>
+</html>
